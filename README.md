@@ -1,7 +1,8 @@
 
 # NumPy Unleashed: AI Code Forge
 
-**Live Demo:** [https://lalomorales22.github.io/numpy-unleashed/](https://lalomorales22.github.io/numpy-unleashed/)
+<img width="1234" alt="Screenshot 2025-06-29 at 12 49 33 AM" src="https://github.com/user-attachments/assets/de4a9729-908c-468d-9c8c-a5e195ec65ff" />
+
 
 
 
