@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NumPy Unleashed: AI Code Forge</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.7.0"
+  }
+}
+</script>
+<style>
+    @keyframes scroll-bg {
+        from { background-position: 0 0; }
+        to { background-position: -200px -200px; }
+    }
+    @keyframes scanline {
+        0% { transform: translateY(-10px); }
+        100% { transform: translateY(10px); }
+    }
+    @keyframes glitch {
+        0% { transform: translate(0); }
+        20% { transform: translate(-3px, 3px); }
+        40% { transform: translate(-3px, -3px); }
+        60% { transform: translate(3px, 3px); }
+        80% { transform: translate(3px, -3px); }
+        100% { transform: translate(0); }
+    }
+    .tactical-bg {
+        position: relative;
+        background-color: #0c1a2e; /* A deeper blue-black */
+    }
+    .tactical-bg::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-image:
+            linear-gradient(rgba(14, 165, 233, 0.07) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(14, 165, 233, 0.07) 1px, transparent 1px);
+        background-size: 50px 50px;
+        animation: scroll-bg 8s linear infinite;
+        opacity: 0.5;
+        z-index: 0;
+    }
+    .tactical-bg::after {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: linear-gradient(rgba(255, 255, 255, 0.03) 50%, transparent 50%);
+        background-size: 100% 4px;
+        animation: scanline 15s linear infinite alternate;
+        opacity: 0.3;
+        pointer-events: none;
+    }
+    .panel-clip {
+        clip-path: polygon(0 10px, 10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+    }
+    .glitch-hover:hover {
+        animation: glitch 0.2s linear 3;
+    }
+    .blinking-cursor {
+        animation: blink 1s step-end infinite;
+    }
+    @keyframes blink {
+        from, to { color: transparent; }
+        50% { color: #2dd4bf; } /* teal-400 */
+    }
+</style>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="tactical-bg">
+    <div id="root" class="relative z-10"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
